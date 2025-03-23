@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .otp-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Dəyişdirildi */
+    text-align: center;
+  }
+  
+  .otp-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .otp-card p {
+    font-size: 14px;
+    margin-bottom: 30px;
+    color: #666;
+  }
+  
+  .otp-inputs {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+  }
+  
+  .otp-field {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .otp-field:focus {
+    border-color: #4caf50;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .resend {
+    margin-top: 15px;
+  }
+  
+  .resend a {
+    color: #4caf50;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .resend a:hover {
+    text-decoration: underline;
+  }
+  

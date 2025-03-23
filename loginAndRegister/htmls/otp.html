@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="../css/otp.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="#">
+            <h2>Verify OTP</h2>
+            <p>Telefonunuza göndərilmiş OTP-ni daxil edin:</p>
+            <div class="input-field">
+                <input type="text" id="otp" required>
+                <label>OTP daxil edin</label>
+            </div>
+            <button type="click" id="verify" >Təsdiqlə</button>
+        </form>
+    </div>
+    <script src="../js/otp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
