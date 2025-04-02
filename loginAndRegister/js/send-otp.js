@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             email:email
         }
 
-        axios.post("http://localhost:8080/v1/auth/send-otp",requestData)
+        axios.post(`${BASE_API_URL}/v1/auth/send-otp`,requestData)
             .then(response => {
                 const data = response.status;
                 if (data==200) {

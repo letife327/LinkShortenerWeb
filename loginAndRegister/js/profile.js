@@ -57,7 +57,7 @@ saveBtn.addEventListener("click", function () {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
     };
-    axios.put(`http://localhost:8080/v1/users/${userId}`,requestData, { headers: headers } )
+    axios.put(`${BASE_API_URL}/v1/users/${userId}`,requestData, { headers: headers } )
         .then(response => {
             usernameDisplay.textContent = newFullName;
             modal.style.display = "none";
@@ -107,7 +107,7 @@ saveBtn.addEventListener("click", function () {
             return;
         }
 
-        axios.post("http://localhost:8080/profile/uploadPhoto", formData, {
+        axios.post(`${BASE_API_URL}/profile/uploadPhoto`, formData, {
             headers: { 
                 "Content-Type": "multipart/form-data",
                 "Authorization": `Bearer ${token}`
@@ -134,14 +134,14 @@ function fetchUserProfile() {
         return;
     }
 
-    axios.get(`http://localhost:8080/v1/users/${userId}`, {
+    axios.get(`${BASE_API_URL}/v1/users/${userId}`, {
         headers: {
             "Authorization": `Bearer ${token}`
         }
     })
     .then(response => {
         console.log("User Details:", response.data);
-        if(response.data.photoUrl=="http://localhost:8080/profile/download/null"){
+        if(response.data.photoUrl==`${BASE_API_URL}/profile/download/null`){
             profileImg.src="../images/profilphoto.webp"
         }
         else{

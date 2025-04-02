@@ -10,7 +10,7 @@ async function fetchUrlList(page = 0) {
     }
 
     try {
-        const response = await axios.get(`http://localhost:8080/v1/users/url-list/${userId}?page=${page}&size=${pageSize}`, {
+        const response = await axios.get(`${BASE_API_URL}/v1/users/url-list/${userId}?page=${page}&size=${pageSize}`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ function displayUrlList(urlList, page, totalPages) {
         row.innerHTML = `
             <td>${url.title}</td>
             <td><a href="${url.originalUrl}" target="_blank">${url.originalUrl}</a></td>
-            <td><a href="http://localhost:8080/${url.shortenedUrl}" target="_blank">http://localhost:8080/${url.shortenedUrl}</a></td>
+            <td><a href="${BASE_API_URL}/${url.shortenedUrl}" target="_blank">${BASE_API_URL}/${url.shortenedUrl}</a></td>
         `;
         tableBody.appendChild(row);
     });

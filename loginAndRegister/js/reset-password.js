@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         try {
-            const response = await axios.post("http://localhost:8080/v1/auth/reset-password", requestData);
+            const response = await axios.post(`${BASE_API_URL}/v1/auth/reset-password`, requestData);
             if (response.status === 200) {
                 alert("Şifrə uğurla dəyişdirildi!");
                 window.location.href = '../htmls/login.html'; 

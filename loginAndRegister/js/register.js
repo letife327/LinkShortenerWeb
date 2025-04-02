@@ -35,7 +35,7 @@ document.querySelector("#registerForm").addEventListener("click", function (even
       password: password
     };
   
-    axios.post("http://localhost:8080/v1/auth/register", requestData, {
+    axios.post(`${BASE_API_URL}/v1/auth/register`, requestData, {
       headers: {
         "Content-Type": "application/json"
       }

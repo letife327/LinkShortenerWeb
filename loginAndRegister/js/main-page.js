@@ -28,7 +28,7 @@ window.onload = function() {
         'Content-Type': 'application/json' // Optional, depending on your server requirements
     };
   
-    axios.post('http://localhost:8080/change-url', urlRequest, { headers: headers })
+    axios.post(`${BASE_API_URL}/change-url`, urlRequest, { headers: headers })
         .then(function(response) {
             const shortenedUrl = response.data; 
             const shortenedLinksContainer = document.getElementById('shortened-links');

@@ -12,7 +12,7 @@ document.querySelector('form').addEventListener('submit', async function(event) 
     localStorage.setItem("otp",otp)
     try {
       // OTP doğ'rulama üçün API çağırışı edirik
-      const response = await axios.post('http://localhost:8080/v1/auth/check-otp', {
+      const response = await axios.post(`${BASE_API_URL}/v1/auth/check-otp`, {
         email: email,
         otp: otp,
       });
@@ -42,7 +42,7 @@ document.querySelector('form').addEventListener('submit', async function(event) 
       email:email
     }
     try {
-      const response = await axios.post('http://localhost:8080/v1/auth/send-otp',requestData );
+      const response = await axios.post(`${BASE_API_URL}/v1/auth/send-otp`,requestData );
       if (response.status === 200) {
         alert('Yeni OTP göndərildi!');
        window.location.href="../htmls/reset-password.html"

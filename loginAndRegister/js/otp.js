@@ -17,7 +17,7 @@ document.getElementById('verify').addEventListener('click', function(e) {
     }
 
     // OTP doğrulama sorğusu göndəririk
-    axios.post('http://localhost:8080/v1/auth/verifying-code', requestData)
+    axios.post(`${BASE_API_URL}/v1/auth/verifying-code`, requestData)
     .then(response => {
         if (response.data === 'User successfully verified') {
             alert('OTP doğrulandı, istifadəçi aktivləşdirildi.');
