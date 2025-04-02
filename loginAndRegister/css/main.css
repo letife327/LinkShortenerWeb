@@ -1,0 +1,225 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* Main content */
+main {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #0073e6;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Link Shortener Form */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input,
+#dashboard input {
+    padding: 12px;
+    border: 2px solid #0073e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #ff9800;
+}
+
+form button {
+    padding: 12px;
+    background-color: #0073e6;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #005bb5;
+}
+
+form button:active {
+    background-color: #004080;
+}
+
+/* Shortened Links Section */
+#shortened-links {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    color: #1e90ff; 
+}
+
+#shortened-links h3 {
+    margin: 0; 
+    color: #4682b4; 
+}
+
+#shortened-links button {
+    padding: 10px 20px; 
+    cursor: pointer; 
+    background-color: #1e90ff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    margin-left: 8px;
+}
+
+#shortened-links button:hover {
+    background-color: #4682b4; 
+}
+
+#shortened-links ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#shortened-links ul li {
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#shortened-links ul li a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#shortened-links ul li a:hover {
+    color: #ff9800;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+/* Hamburger Menü Butonu */
+.menu-toggle {
+    display: none; /* Varsayılan olarak gizli */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobil Ekranlar için Navigasyon */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Küçük ekranlarda görünecek */
+    }
+
+    nav ul {
+        display: none; /* Varsayılan olarak gizli */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #0073e6;
+        width: 200px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex; /* Butona basıldığında görünür olacak */
+    }
+}

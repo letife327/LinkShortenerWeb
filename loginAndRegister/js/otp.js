@@ -22,7 +22,7 @@ document.getElementById('verify').addEventListener('click', function(e) {
         if (response.data === 'User successfully verified') {
             alert('OTP doğrulandı, istifadəçi aktivləşdirildi.');
             localStorage.setItem("email", email);
-            window.location.href="../htmls/main.html"
+            window.location.href="../htmls/login.html"
 
         } else {
             alert('OTP doğrulanmadı. Xahiş edirik yenidən yoxlayın.');

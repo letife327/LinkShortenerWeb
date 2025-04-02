@@ -116,3 +116,58 @@ button:hover {
   margin-top: 30px;
   color: #fff;
 }
+/* Mobile devices */
+@media (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .input-field input {
+    height: 35px;
+  }
+  button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  .forget {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 0;
+  }
+  .forget a {
+    margin-top: 10px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 80%;
+    padding: 25px;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  button {
+    padding: 12px 18px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+  .wrapper {
+    width: 450px;
+    padding: 35px;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  button {
+    padding: 14px 22px;
+    font-size: 18px;
+  }
+}

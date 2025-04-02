@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Shortener</title>
+    <link rel="stylesheet" href="../css/shortend-links.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <div class="container">
+            <h1>LinkShortener</h1>
+            <button class="menu-toggle">&#9776;</button> <!-- Hamburger Menü Butonu -->
+            <nav>
+                <ul>
+                    <li><a href="../htmls/main-page.html">Dashboard</a></li>
+                    <li><a href="shortened-links.html">Shortened Links</a></li>
+                    <li><a href="../htmls/profil.html">Profile</a></li>
+                    <li><a id="logoutButton" href="#logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Shortened Links Table Section -->
+    <!-- Shortened Links Table Section -->
+<section id="links">
+    <div class="container">
+        <p id="no-links-message">No links available yet.</p>
+        <table id="links-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Original URL</th>
+                    <th>Shortened URL</th>
+                </tr>
+            </thead>
+            <tbody id="links-list"></tbody>
+        </table>
+        
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button id="prev-page" disabled>Önceki</button>
+            <span id="pagination-info">Sayfa: 1</span>
+            <button id="next-page" disabled>Sonraki</button>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 LinkShortener. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../js/shortened-links.js"></script>
+</body>
+</html>

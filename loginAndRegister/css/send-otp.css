@@ -1,25 +1,42 @@
-body {
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
 }
+
+/* Container styling */
 .container {
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 100%;
+    max-width: 400px; /* Ensures the form doesn't get too wide */
+    box-sizing: border-box;
 }
+
+/* Input styling */
 input[type="email"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
+
+/* Button styling */
 button {
     background-color: #007bff;
     color: white;
@@ -27,7 +44,35 @@ button {
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 200px; /* Button width will also be responsive */
+    margin: 10px 0;
 }
+
+/* Button hover effect */
 button:hover {
     background-color: #0056b3;
+}
+
+/* Responsive Design - for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    input[type="email"], button {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design - for very small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    input[type="email"], button {
+        font-size: 12px;
+    }
 }
