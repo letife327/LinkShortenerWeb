@@ -95,3 +95,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const logoutButton = document.querySelector('#logoutButton');
+
+    if (logoutButton) {
+        logoutButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Sayfanın varsayılan davranışını engelle
+
+            // LocalStorage temizle
+            localStorage.clear();
+
+            // Kullanıcıyı giriş (login) sayfasına yönlendir
+            window.location.href = "../htmls/login.html"; // Login sayfasının yolu
+        });
+    }
+});
