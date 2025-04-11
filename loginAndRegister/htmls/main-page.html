@@ -18,6 +18,13 @@
                     <li><a href="shortened-links.html">Shortened Links</a></li>
                     <li><a href="../htmls/profil.html">Profile</a></li>
                     <li><a id="logoutButton" href="#logout">Logout</a></li>
+                    <li id="weather-header-wrapper">
+                        <div id="weather-box">
+                            <h3>Baku</h3>
+                            <p id="weather-temp">Loading...</p>
+                            <p id="weather-desc"></p>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -30,12 +37,6 @@
             <h2>Welcome, <span id="username"></span>!</h2>
             <input type="text" name="title" id="title" placeholder="Enter url name...">
             
-
-            <div id="weather-box">
-                <h3>Weather in Baku</h3>
-                <p id="weather-temp">Loading...</p>
-                <p id="weather-desc"></p>
-            </div>
 
             <!-- Link Shortener Form -->
             <form action="#" method="POST" id="shorten-form">

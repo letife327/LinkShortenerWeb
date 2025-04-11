@@ -77,50 +77,43 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Bakı üçün hava məlumatını göstərmək
-const weatherBox = document.getElementById("weather-box");
-const tempElem = document.getElementById("weather-temp");
-const descElem = document.getElementById("weather-desc");
-const weatherIcon = document.createElement("img");
 
 // Open-Meteo API istifadə olunur
-fetch("https://api.open-meteo.com/v1/forecast?latitude=40.4093&longitude=49.8671&current_weather=true")
-    .then(response => response.json())
-    .then(data => {
-        const weather = data.current_weather;
-        const temp = weather.temperature;
-        const condition = weather.weathercode;
+function getWeatherIcon(temp, rain, snow) {
+    if (snow > 0) {
+        return "🌨️ Snowy";
+    } else if (rain > 0) {
+        return "🌧️ Rainy";
+    } else if (temp >= 25) {
+        return "🌞 Hot";
+    } else if (temp >= 15) {
+        return "🌤️ Warm";
+    } else if (temp >= 5) {
+        return "☁️ Cool";
+    } else {
+        return "❄️ Cold";
+    }
+}
 
-        // Temperaturu göstər
-        tempElem.textContent = `Temperature: ${temp}°C`;
+async function fetchWeather() {
+    try {
+        const response = await axios.get("http://localhost:8080/api/weather/baku"); // sənin API endpointin
+        const data = response.data;
 
-        // Şərhi göstər
-        if (condition === 0) {
-            descElem.textContent = "Clear sky";
-            weatherIcon.src = "https://img.icons8.com/ios/50/000000/sun.png"; // Günəşli hava
-        } else if (condition === 1 || condition === 2) {
-            descElem.textContent = "Partly cloudy";
-            weatherIcon.src = "https://img.icons8.com/ios/50/000000/clouds.png"; // Buludlu hava
-        } else if (condition === 3 || condition === 4) {
-            descElem.textContent = "Overcast";
-            weatherIcon.src = "https://img.icons8.com/ios/50/000000/clouds.png"; // Buludlu hava
-        } else if (condition === 51 || condition === 53 || condition === 55) {
-            descElem.textContent = "Drizzle";
-            weatherIcon.src = "https://img.icons8.com/ios/50/000000/rain.png"; // Yağışlı hava
-        } else if (condition === 61 || condition === 63 || condition === 65) {
-            descElem.textContent = "Rain";
-            weatherIcon.src = "https://img.icons8.com/ios/50/000000/rain.png"; // Yağışlı hava
-        } else {
-            descElem.textContent = "Unpredictable weather";
-            weatherIcon.src = "https://img.icons8.com/ios/50/000000/question-mark.png"; // Naməlum hava
-        }
+        const current = data.current;
+        const temp = current.temperature_2m;
+        const rain = current.rain;
+        const snow = current.snowfall;
 
-        // Şəkili box-a əlavə et
-        weatherBox.appendChild(weatherIcon);
-    })
-    .catch(err => {
-        tempElem.textContent = "Could not load weather data.";
-        descElem.textContent = "";
-        weatherBox.appendChild(weatherIcon);
-        weatherIcon.src = "https://img.icons8.com/ios/50/000000/question-mark.png"; // Şəkil səhv olduqda
-    });
+        const icon = getWeatherIcon(temp, rain, snow);
+
+        document.getElementById("weather-temp").textContent = `${temp}°C`;
+        document.getElementById("weather-desc").textContent = icon;
+
+    } catch (error) {
+        document.getElementById("weather-temp").textContent = "Xəta baş verdi.";
+        document.getElementById("weather-desc").textContent = error.message;
+    }
+}
+
+window.onload = fetchWeather;
